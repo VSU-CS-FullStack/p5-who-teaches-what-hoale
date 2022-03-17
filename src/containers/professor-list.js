@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
-import { selectCourse } from '../actions/index';
+import { selectProfessor } from '../actions/index';
 
-class CourseList extends Component {
+class ProfessorList extends Component {
     renderList() {
-        return this.props.courses.map((course, index)=>{
+        return this.props.professors.map((professor, index)=>{
             return (
                 <li 
-                onClick={ () => this.props.selectCourse(course) }
+                onClick={ () => this.props.selectProfessor(professor) }
                 key={index} 
                 className="list-group-item">
-                {course.name}
+                {professor.name}
             </li>
             );
         });
@@ -29,16 +29,16 @@ class CourseList extends Component {
 
 function mapStateToProps(state){
     return {
-        courses: state.courses,
-        activeCourse: state.activeCourse
+        professors: state.professors,
+        activeProfessor: state.activeProfessor
 }
 
 }
 function mapDispatchToProps(dispatch){
-    return bindActionCreators({ selectCourse: selectCourse }, dispatch);
+    return bindActionCreators({ selectProfessor: selectProfessor }, dispatch);
 }
 
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(CourseList);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfessorList);
