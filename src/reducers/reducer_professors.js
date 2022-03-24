@@ -1,6 +1,6 @@
 export default function() {
     return [ 
-        {name: "Sudip Chakraborty"},
+    {name: "Sudip Chakraborty"},
     {name: "Ahana Roy Choudhury"},
     {name: "Anurag Dasgupta"},
     {name: "Dave Gibson"},

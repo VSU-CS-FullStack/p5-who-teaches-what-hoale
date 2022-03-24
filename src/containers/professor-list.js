@@ -2,14 +2,15 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
-import { selectProfessor } from '../actions/index';
+import { selectProfessor, selectCourse} from '../actions/index';
 
+const a=null
 class ProfessorList extends Component {
     renderList() {
         return this.props.professors.map((professor, index)=>{
             return (
                 <li 
-                onClick={ () => this.props.selectProfessor(professor) }
+                onClick={ () => {this.props.selectProfessor(professor);this.props.selectCourse(a)}}
                 key={index} 
                 className="list-group-item">
                 {professor.name}
@@ -35,7 +36,7 @@ function mapStateToProps(state){
 
 }
 function mapDispatchToProps(dispatch){
-    return bindActionCreators({ selectProfessor: selectProfessor }, dispatch);
+    return bindActionCreators({ selectProfessor: selectProfessor,selectCourse:selectCourse }, dispatch);
 }
 
 
