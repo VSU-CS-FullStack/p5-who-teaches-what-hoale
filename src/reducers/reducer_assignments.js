@@ -30,14 +30,6 @@ export default function(state={assignments:[]}, action) {
             return{
                 assignments:[...state.assignments.slice(0, action.index)],
             }
-           
- 
-            // // part of the array after the given item
-            // ...arr.slice(index + 1)
-         
-
-
-
         }
         case 'PROFESSOR_SELECTED': 
         {
