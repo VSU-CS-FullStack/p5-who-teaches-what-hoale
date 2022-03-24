@@ -13,9 +13,11 @@ class AssignmentsList extends Component {
                 key={index} 
                 className="list-group-item">
                 <div>
-                {assignment.course.name} 
+                {assignment.professor.name} 
                 </div>
-                {assignment.professor.name}
+                <div>
+                CS {assignment.course.id} 
+                </div>
             </li>
             );
         });
@@ -23,7 +25,7 @@ class AssignmentsList extends Component {
 
     render() {
         return(
-            <ul className="list-group col-sm-4">
+            <ul className="list-group col-sm">
                 {this.renderList()} 
             </ul>
         )

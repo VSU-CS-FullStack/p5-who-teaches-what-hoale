@@ -9,18 +9,30 @@ class CourseList extends Component {
         return this.props.courses.map((course, index)=>{
             return (
                 <li 
-                onClick={ () => this.props.selectCourse(course) }
+                onClick={ () => this.props.selectCourse(course,this.props.activeProfessor)}
                 key={index} 
                 className="list-group-item">
-                {course.name}
+                 <div>
+                    Number of Sections to Offer: {course.sections}
+                </div>
+                
+                CS:{course.id}
+                <div>
+                        {course.name}
+                </div>
+                <div>
+                    Credit Hours: {course.hour}
+                </div>
+               
             </li>
             );
         });
     }
 
+
     render() {
         return(
-            <ul className="list-group col-sm-4">
+            <ul className="list-group col-sm">
                 {this.renderList()} 
             </ul>
         )
@@ -30,12 +42,13 @@ class CourseList extends Component {
 function mapStateToProps(state){
     return {
         courses: state.courses,
-        activeCourse: state.activeCourse
+        activeCourse: state.activeCourse,
+        activeProfessor:state.activeProfessor
 }
 
 }
 function mapDispatchToProps(dispatch){
-    return bindActionCreators({ selectCourse: selectCourse }, dispatch);
+    return bindActionCreators({ selectCourse: selectCourse}, dispatch);
 }
 
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CourseList from '../containers/course-list';
-import CourseDetail from '../containers/course-detail';
 import ProfessorList from '../containers/professor-list';
 import AssignmentsList from '../containers/assignments-list';
 export default class App extends Component {
@@ -10,7 +9,6 @@ export default class App extends Component {
         <div class="col-sm">
         Courses
         <CourseList />
-        {/* //<CourseDetail/> */}
       </div>
       <div class="col-sm">  
         Professors

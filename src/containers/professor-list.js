@@ -5,15 +5,30 @@ import { bindActionCreators } from 'redux';
 import { selectProfessor, selectCourse} from '../actions/index';
 
 const a=null
+const professorSelected=true
 class ProfessorList extends Component {
     renderList() {
         return this.props.professors.map((professor, index)=>{
             return (
                 <li 
-                onClick={ () => {this.props.selectProfessor(professor);this.props.selectCourse(a)}}
+                onClick={ () => {this.props.selectProfessor(professor,professorSelected,
+                //this.props.activeCourse.hours
+                4);
+                //this.props.selectCourse(a)
+                }
+                }
                 key={index} 
                 className="list-group-item">
+                <div>
                 {professor.name}
+                </div>
+                <div>
+                Number of Courses Taught: {professor.numCourses}
+                </div>
+                <div>
+                Number of Credit Hours Taught: {professor.credit}
+                </div>
+                
             </li>
             );
         });
@@ -21,7 +36,7 @@ class ProfessorList extends Component {
 
     render() {
         return(
-            <ul className="list-group col-sm-4">
+            <ul className="list-group col-sm">
                 {this.renderList()} 
             </ul>
         )
@@ -31,7 +46,8 @@ class ProfessorList extends Component {
 function mapStateToProps(state){
     return {
         professors: state.professors,
-        activeProfessor: state.activeProfessor
+        activeProfessor: state.activeProfessor,
+        activeCourse: state.activeCourse
 }
 
 }
