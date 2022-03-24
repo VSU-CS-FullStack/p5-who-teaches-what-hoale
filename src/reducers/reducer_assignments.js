@@ -18,7 +18,15 @@ export default function(state={assignments:[]}, action) {
                 course_selected=true
                 assignment={course:action.payload,professor:currentProfessor}
                 return { 
-                        assignments:[...state.assignments,assignment]
+                        assignments:[...state.assignments,assignment].sort(function(a, b){  
+                            var lastName1=a.professor.name
+                            lastName1=lastName1.substring(lastName1.lastIndexOf(" "))
+                            var lastName2=b.professor.name
+                            lastName2=lastName2.substring(lastName2.lastIndexOf(" "))
+                            if(lastName1 > lastName2) return 1;
+                            if(lastName1 < lastName2) return -1;
+                            return 0;
+                        })
                 }
         
             }
@@ -26,9 +34,8 @@ export default function(state={assignments:[]}, action) {
         }
         case 'ASSIGNMENT_SELECTED':
             {
-
             return{
-                assignments:[...state.assignments.slice(0, action.index)],
+                assignments:[...state.assignments.slice(0, action.index), ...state.assignments.slice(action.index + 1)],
             }
         }
         case 'PROFESSOR_SELECTED': 
@@ -44,17 +51,4 @@ export default function(state={assignments:[]}, action) {
             return state;
     }
     
-    return state;
-}
-
-function remove(arr, item)
-{
-    var index = arr.indexOf(item);
-    return [
-        // part of the array before the given item
-        ...arr.slice(0, index),
- 
-        // part of the array after the given item
-        ...arr.slice(index + 1)
-    ];
 }

@@ -4,13 +4,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { selectAssignment} from '../actions/index';
 
+
 class AssignmentsList extends Component {
     renderList() {
         return this.props.assignments.map((assignment, index)=>{
-            console.log(index)
             return (
                 <li 
-               
                 onClick={ () => this.props.selectAssignment(assignment,index) }
                 key={index} 
                 className="list-group-item">

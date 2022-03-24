@@ -1,7 +1,7 @@
 const initialState=[
-        {id:1301, name: "Principles of Programming I",hour:4,sections:3},
         {id:1000, name: "Introduction to Microcomputers and Applications", hour: 3,sections:1},
         {id:1010, name: "Algorithmic Problem Solving", hour: 3,sections:3},
+        {id:1301, name: "Principles of Programming I",hour:4,sections:3},
         {id:1302, name: "Princicples of Programming II",hour:4,sections:2},
         {id:1340, name: "Computing for Scientists",hour:3,sections:1},
         {id:2620, name: "Discrete Structures", hour: 3,sections:1},
@@ -34,27 +34,37 @@ export default function(state = initialState, action) {
                 })
                 .filter(course=>
                     course.sections>0)
-                .sort((course1, course2) => {
-                    return course1.id - course2.id;
-                });
+                .sort(function(a, b){  
+                        if(a.id > b.id) return 1;
+                        if(a.id < b.id) return -1;
+                        return 0;
+                    });
         case "ASSIGNMENT_SELECTED":
-            if (state.filter(e => e.id !== action.payload.course.id).length > 0) {
-                state
-                .sort((course1, course2) => {
-                    return course1.id - course2.id;
-                });          
-                return [...state,action.payload.course]
-              }
-                    return state
-                    .map(course=> {
+            if (state.some(course=>course.id===action.payload.course.id)) { 
+                return state
+                  .map(course=> {
                          return (course.id === action.payload.course.id)
                         ? Object.assign({}, course, {
                             sections:course.sections+1
                           })
                         : course;
                     })
-
-                    
+                    .sort(function(a, b){  
+                        if(a.id > b.id) return 1;
+                        if(a.id < b.id) return -1;
+                        return 0;
+                    });
+              }
+              console.log("rose")                
+           console.log("hi")  
+           state
+           .sort(function(a, b){  
+               if(a.id > b.id) return 1;
+               if(a.id < b.id) return -1;
+               return 0;
+           });
+           return [...state,action.payload.course]
+          
                     
                         
         default:
