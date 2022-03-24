@@ -1,38 +1,38 @@
 import { selectCourse } from "../actions"
 
-var course_selected=new Object();
-var professor_selected=new Object();
+var course_selected=false;
+var professor_selected=false;
 var assignment={course:new Object(),professor:new Object()}
 var currentProfessor=new Object();
-const currentCourse=new Object();
+var currentCourse=new Object();
 export default function(state={assignments:[]}, action) {
     switch(action.type){
         case 'COURSE_SELECTED': 
-        if (action.payload==null)    
-                {
-                    return
-                }  
-        else if (professor_selected)
         {
-            course_selected=true
-            assignment={course:action.payload,professor:currentProfessor}
-            return { 
+            if (action.payload==null)    
+            {
+                return state
+            }  
+            else if (professor_selected)
+            {       
+                course_selected=true
+                assignment={course:action.payload,professor:currentProfessor}
+                return { 
                 // assignments:[...state.assignments,action.payload]
-               assignments:[...state.assignments,assignment]
+                assignments:[...state.assignments,assignment]
+                }
+        
+            }
+        return state
         }
+        case 'PROFESSOR_SELECTED': 
+        {
+            currentProfessor=action.payload
+            course_selected=false
+            professor_selected=true
             
         }
       
-        case 'PROFESSOR_SELECTED': 
-        currentProfessor=action.payload
-        course_selected=false
-        professor_selected=true
-        // return {         
-        //     assignments:[...state.assignments,action.payload]
-        // }
-
-
-
         default:
           
             return state;
