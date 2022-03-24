@@ -12,9 +12,7 @@ class ProfessorList extends Component {
             return (
                 <li 
                 onClick={ () => {this.props.selectProfessor(professor,professorSelected,
-                //this.props.activeCourse.hours
                 0);
-                //this.props.selectCourse(a)
                 }
                 }
                 key={index} 
