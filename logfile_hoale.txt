@@ -1,0 +1,83 @@
+commit e5cd4c2a1dbbd3de7d7cd08c7defda7cbff4bb82
+Author: hnqle3 <hoa.nq.le3@gmail.com>
+Date:   Thu Mar 24 16:41:14 2022 -0400
+
+    Getting ready for Heroku
+
+commit c45e1ab72b3617e7096fe7e001e08d9d62f3303c
+Author: hnqle3 <hoa.nq.le3@gmail.com>
+Date:   Thu Mar 24 16:23:13 2022 -0400
+
+    Finishing touches
+
+commit 5ab0c154cd7a44ccdddf9c034f630f7679af938c
+Author: hnqle3 <hoa.nq.le3@gmail.com>
+Date:   Thu Mar 24 16:11:47 2022 -0400
+
+    Finishing touches
+
+commit 3bc3ccf0d431f146548fb0adc6b23b8354538ee5
+Author: hnqle3 <hoa.nq.le3@gmail.com>
+Date:   Thu Mar 24 16:08:25 2022 -0400
+
+    Made all lists be sorted accordingly
+
+commit 4f22d78e3948e03a486941a0852a6410e20ed82d
+Author: hnqle3 <hoa.nq.le3@gmail.com>
+Date:   Thu Mar 24 14:55:54 2022 -0400
+
+    Made assignments able to be deleted and course list accordingly
+
+commit 763b01543babf1377363b1637e6c34796c3bb945
+Author: hnqle3 <hoa.nq.le3@gmail.com>
+Date:   Thu Mar 24 14:31:08 2022 -0400
+
+    Made assignments able to be deleted and professor list updates accordingly
+
+commit 9ae86a54b6486794a7afdb0c8883c2c20c8bd10b
+Author: hnqle3 <hoa.nq.le3@gmail.com>
+Date:   Thu Mar 24 00:43:28 2022 -0400
+
+    Made assignments update the professors and course list accordingly
+
+commit b6dc5143c5963ae152083b7452982f7f49e886d4
+Author: hnqle3 <hoa.nq.le3@gmail.com>
+Date:   Wed Mar 23 22:45:32 2022 -0400
+
+    Fixed an assignment bug where you could click a course twice and an assignment will be created
+
+commit 958ef613ce19b2f5cf81400c3d8a89e1eccabcdb
+Author: hnqle3 <hoa.nq.le3@gmail.com>
+Date:   Wed Mar 23 22:35:05 2022 -0400
+
+    Able to create an array of object assignments
+
+commit f6ef6651a67da8fe13b2c0e90fcbce2ed09f1070
+Author: hnqle3 <hoa.nq.le3@gmail.com>
+Date:   Thu Mar 17 18:33:26 2022 -0400
+
+    Created and populated a clickable course list and professor list that updates store with active course and active professor
+
+commit 4ee752e911e22c28e21832b89ee9393f84bec7b4
+Author: hnqle3 <hoa.nq.le3@gmail.com>
+Date:   Thu Mar 17 15:43:16 2022 -0400
+
+    Created and populated course list
+
+commit a36c904c829b0fd307bfefde9566177d7738ea21
+Author: hnqle3 <hoa.nq.le3@gmail.com>
+Date:   Thu Mar 17 15:05:23 2022 -0400
+
+    created a new react app
+
+commit 98b8c68ace2075a1a2e7e56255325515d4cce639
+Author: hnqle3 <hoa.nq.le3@gmail.com>
+Date:   Thu Mar 17 15:02:28 2022 -0400
+
+    Initialize project using Create React App
+
+commit b0c0ac64526d0fff9e8fd1070545e08a3c4d7876
+Author: hnqle3 <89719437+hnqle3@users.noreply.github.com>
+Date:   Thu Mar 24 16:18:00 2022 -0400
+
+    Create hello

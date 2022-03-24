@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = createStore(rootReducer, {}, 
     //composeWithDevTools(
-    //applyMiddleware()
+    applyMiddleware()
     //)
     );
 
