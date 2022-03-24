@@ -8,6 +8,7 @@ import { selectAssignment} from '../actions/index';
 class AssignmentsList extends Component {
     renderList() {
         return this.props.assignments.map((assignment, index)=>{
+            
             return (
                 <li 
                 onClick={ () => this.props.selectAssignment(assignment,index) }
