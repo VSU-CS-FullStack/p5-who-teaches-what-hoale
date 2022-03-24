@@ -1,16 +1,3 @@
-// export default function() {
-//     return [ 
-//     {name: "Sudip Chakraborty"},
-//     {name: "Ahana Roy Choudhury"},
-//     {name: "Anurag Dasgupta"},
-//     {name: "Dave Gibson"},
-//     {name: "Chunlei Liu"},
-//     {name: "Radu Paul Mihail"},
-//     {name: "Krishnendu Roy"},
-//     {name: "Krishnapriya Kottakkal Sugathan"},
-//     {name: "Zhiguang Xu"},
-// ];
-// }
 const initialState=[ 
     {name: "Sudip Chakraborty",numCourses:0,credit:0},
     {name: "Ahana Roy Choudhury",numCourses:0,credit:0},
@@ -32,18 +19,23 @@ switch (action.type) {
                       })
                     : professor;
             })
-            // .filter(course=>
-            //     course.sections>0)
-            // .sort((course1, course2) => {
-            //     return course1.id - course2.id;
-            // });
     case "COURSE_SELECTED":
-        console.log("hi")
         return state
         .map(professor=> {
              return (professor.name === action.currentProfessor.name)
             ? Object.assign({}, professor, {
                 numCourses: professor.numCourses+1,credit:professor.credit+action.payload.hour
+              })
+            : professor;
+        }
+        
+        )
+    case "ASSIGNMENT_SELECTED":
+        return state
+        .map(professor=> {
+             return (professor.name === action.payload.professor.name)
+            ? Object.assign({}, professor, {
+                numCourses: professor.numCourses-1,credit:professor.credit-action.payload.course.hour
               })
             : professor;
         }

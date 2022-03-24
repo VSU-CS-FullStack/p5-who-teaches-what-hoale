@@ -18,12 +18,26 @@ export default function(state={assignments:[]}, action) {
                 course_selected=true
                 assignment={course:action.payload,professor:currentProfessor}
                 return { 
-                // assignments:[...state.assignments,action.payload]
-                assignments:[...state.assignments,assignment]
+                        assignments:[...state.assignments,assignment]
                 }
         
             }
         return state
+        }
+        case 'ASSIGNMENT_SELECTED':
+            {
+
+            return{
+                assignments:[...state.assignments.slice(0, action.index)],
+            }
+           
+ 
+            // // part of the array after the given item
+            // ...arr.slice(index + 1)
+         
+
+
+
         }
         case 'PROFESSOR_SELECTED': 
         {
@@ -32,11 +46,23 @@ export default function(state={assignments:[]}, action) {
             professor_selected=true
             
         }
-      
+
         default:
           
             return state;
     }
+    
     return state;
 }
 
+function remove(arr, item)
+{
+    var index = arr.indexOf(item);
+    return [
+        // part of the array before the given item
+        ...arr.slice(0, index),
+ 
+        // part of the array after the given item
+        ...arr.slice(index + 1)
+    ];
+}

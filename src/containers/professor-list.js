@@ -13,7 +13,7 @@ class ProfessorList extends Component {
                 <li 
                 onClick={ () => {this.props.selectProfessor(professor,professorSelected,
                 //this.props.activeCourse.hours
-                4);
+                0);
                 //this.props.selectCourse(a)
                 }
                 }

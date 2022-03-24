@@ -2,14 +2,16 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
-import { selectCourse } from '../actions/index';
+import { selectAssignment} from '../actions/index';
 
 class AssignmentsList extends Component {
     renderList() {
         return this.props.assignments.map((assignment, index)=>{
+            console.log(index)
             return (
                 <li 
-                // onClick={ () => this.props.selectCourse(course) }
+               
+                onClick={ () => this.props.selectAssignment(assignment,index) }
                 key={index} 
                 className="list-group-item">
                 <div>
@@ -38,13 +40,13 @@ function mapStateToProps(state){
 }
 
 }
-// function mapDispatchToProps(dispatch){
-//     return bindActionCreators({ selectCourse: selectCourse }, dispatch);
-// }
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({ selectAssignment: selectAssignment}, dispatch);
+}
 
 
 
 
 export default connect(mapStateToProps, 
-    //mapDispatchToProps
+    mapDispatchToProps
     )(AssignmentsList);

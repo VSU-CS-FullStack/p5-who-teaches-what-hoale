@@ -1,5 +1,7 @@
 var prfSelected=false
-export function selectCourse(course,currentProfessor){
+var coSelected=false
+export function selectCourse(course,currentProfessor,){
+
     return {
         type: 'COURSE_SELECTED',
         payload: course,prfSelected,currentProfessor
@@ -10,6 +12,13 @@ export function selectProfessor(professor,professorSelected,hours){
     return {
         type: 'PROFESSOR_SELECTED',
         payload: professor,hours
+    }
+}
+
+export function selectAssignment(assignment,index){
+    return {
+        type: 'ASSIGNMENT_SELECTED',
+        payload: assignment, index
     }
 }
 
